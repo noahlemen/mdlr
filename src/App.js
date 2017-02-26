@@ -8,8 +8,11 @@ class App extends Component {
   render() {
     return (
       <AudioContext>
-        <Oscillator amplitude={1} frequency={880} />
-        <Oscillator amplitude={1} frequency={440} />
+        <Oscillator amplitude={1} frequency={880}>
+          <Oscillator amplitude={10000} frequency={440}>
+            <Oscillator amplitude={10000} frequency={220} />
+          </Oscillator>
+        </Oscillator>
       </AudioContext>
     );
   }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, cloneElement } from 'react';
 import { AudioContextBackend } from './AudioContext.js';
 
 /*
@@ -45,7 +45,7 @@ class Oscillator extends Component {
     this.oscillator.connect(this.gain);
     this.oscillator.start();
 
-    this.gain.connect(this.context.audioContext.destination);
+    this.props.connectTo || this.gain.connect(this.context.audioContext.destination);
   }
 
   componentWillUnmount() {
@@ -53,15 +53,25 @@ class Oscillator extends Component {
     this.oscillator.disconnect();
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    const { frequency, amplitude } = this.props;
+  render() {
+    const { frequency, amplitude, connectTo, children } = this.props;
 
     this.oscillator.frequency.setValueAtTime(frequency, 0);
     this.gain.gain.value = amplitude;
-  }
+    connectTo && this.gain.connect(connectTo);
 
-  render() {
-    return null;
+    const newChildren = React.Children.map(children, (child) => (
+      cloneElement(child, {
+        connectTo: this.oscillator.frequency,
+        ...child.props
+      })
+    ));
+
+    return (
+      <div>
+        {newChildren}
+      </div>
+    );
   }
 }
 
@@ -71,7 +81,8 @@ Oscillator.contextTypes = {
 
 Oscillator.propTypes = {
   frequency: React.PropTypes.number,
-  amplitude: React.PropTypes.number
+  amplitude: React.PropTypes.number,
+  connectTo: React.PropTypes.instanceOf(AudioParam)
 }
 
 export default Oscillator;
