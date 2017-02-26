@@ -12,11 +12,7 @@ class AudioContext extends Component {
   audioContext = new AudioContextBackend();
 
   render() {
-    return (
-      <div>
-        {this.props.children}
-      </div>
-    );
+    return <div>{this.props.children}</div>;
   }
 }
 

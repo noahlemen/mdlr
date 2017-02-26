@@ -45,7 +45,10 @@ class Oscillator extends Component {
     this.oscillator.connect(this.gain);
     this.oscillator.start();
 
-    this.props.connectTo || this.gain.connect(this.context.audioContext.destination);
+    this.modulations = {
+      frequency: this.oscillator.frequency,
+      amplitude: this.gain.gain
+    }
   }
 
   componentWillUnmount() {
@@ -54,24 +57,28 @@ class Oscillator extends Component {
   }
 
   render() {
-    const { frequency, amplitude, connectTo, children } = this.props;
+    const {
+      frequency,
+      amplitude,
+      waveform,
+      connectTo,
+      children
+    } = this.props;
 
+    this.oscillator.type = waveform;
     this.oscillator.frequency.setValueAtTime(frequency, 0);
     this.gain.gain.value = amplitude;
+
     connectTo && this.gain.connect(connectTo);
 
     const newChildren = React.Children.map(children, (child) => (
       cloneElement(child, {
-        connectTo: this.oscillator.frequency,
+        connectTo: this.modulations,
         ...child.props
       })
     ));
 
-    return (
-      <div>
-        {newChildren}
-      </div>
-    );
+    return <div>{newChildren}</div>;
   }
 }
 
@@ -82,7 +89,22 @@ Oscillator.contextTypes = {
 Oscillator.propTypes = {
   frequency: React.PropTypes.number,
   amplitude: React.PropTypes.number,
-  connectTo: React.PropTypes.instanceOf(AudioParam)
+  waveform: React.PropTypes.oneOf([
+    'sine',
+    'square',
+    'sawtooth',
+    'triangle'
+  ]),
+  connectTo: React.PropTypes.oneOfType([
+    React.PropTypes.instanceOf(AudioParam),
+    React.PropTypes.instanceOf(AudioNode)
+  ])
+}
+
+Oscillator.defaultProps = {
+  frequency: 440,
+  amplitude: 1,
+  waveform: 'sine'
 }
 
 export default Oscillator;
