@@ -14,7 +14,7 @@ or
 yarn add mdlr
 ```
 
-### usage 
+## usage 
 
 ```es6
 import { AudioContext, Output, Oscillator } from 'mdlr';
