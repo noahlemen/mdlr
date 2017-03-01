@@ -17,12 +17,19 @@ yarn add mdlr
 ## usage 
 
 ```es6
-import { AudioContext, Output, Oscillator } from 'mdlr';
+import { AudioContext, Output, Oscillator, Modulation } from 'mdlr';
 
 const ToneGenerator = ({ freq }) => (
   <AudioContext>
     <Output>
-      <Oscillator frequency={freq} />
+      <Oscillator frequency={freq} waveform="sawtooth">
+        <Modulation parameter="frequency">
+          <Oscillator frequency={30} />
+        </Modulation>
+        <Modulation parameter="amplitude">
+          <Oscillator frequency={2} />
+        </Modulation>
+      </Oscillator>
     </Output>
   </AudioContext>
 );
