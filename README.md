@@ -1,16 +1,16 @@
-# mdlr2
+# `mdlr`
 
 [![Travis][build-badge]][build]
 [![npm package][npm-badge]][npm]
 [![Coveralls][coveralls-badge]][coveralls]
 
-Describe mdlr2 here.
+a react component library for building declarative synthesizer instruments and systems
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
+[build-badge]: https://img.shields.io/circleci/kedromelon/mdlr/master.png?style=flat-square
+[build]: https://circleci.com/gh/kedromelon/mdlr
 
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
+[npm-badge]: https://img.shields.io/npm/v/mdlr.png?style=flat-square
+[npm]: https://www.npmjs.org/package/mdlr
 
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
+[coveralls-badge]: https://img.shields.io/coveralls/kedromelon/mdlr/master.png?style=flat-square
+[coveralls]: https://coveralls.io/github/kedromelon/mdlr
