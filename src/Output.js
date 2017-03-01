@@ -17,12 +17,13 @@ class Output extends Component {
 
     connectTo && this.gain.connect(connectTo);
 
-    const newChildren = React.Children.map(children, (child) => (
-      cloneElement(child, {
+    const newChildren = React.Children.map(
+      children,
+      child => cloneElement(child, {
         connectTo: this.gain,
         ...child.props
       })
-    ));
+    );
 
     return <div>{newChildren}</div>;
   }
@@ -30,13 +31,13 @@ class Output extends Component {
 
 Output.contextTypes = {
   audioContext: React.PropTypes.instanceOf(AudioContextBackend)
-}
+};
 
 Output.propTypes = {
   connectTo: React.PropTypes.oneOfType([
     React.PropTypes.instanceOf(AudioParam),
     React.PropTypes.instanceOf(AudioNode)
   ])
-}
+};
 
 export default Output;

@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import AudioContext from './AudioContext.js';
-import Oscillator from './Oscillator.js';
-import Output from './Output.js';
-import Modulation from './Modulation.js';
+import { render } from 'react-dom';
 import ntof from 'note-to-frequency';
 
-import './App.css';
+import { AudioContext, Modulation, Oscillator, Output } from '../../src';
 
 class App extends Component {
   state = {
@@ -13,13 +10,13 @@ class App extends Component {
     note: 'C4'
   };
 
-  handleChange = (e) => this.setState({ input: e.target.value });
+  handleChange = e => this.setState({ input: e.target.value });
 
-  commitNote = (e) => {
+  commitNote = e => {
     if (e.keyCode === 13) {
       this.setState({ note: this.state.input });
     }
-  }
+  };
 
   render() {
     return (
@@ -46,4 +43,4 @@ class App extends Component {
   }
 }
 
-export default App;
+render(<App />, document.querySelector('#demo'));

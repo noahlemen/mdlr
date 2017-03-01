@@ -12,7 +12,7 @@ class Oscillator extends Component {
     this.modulations = {
       frequency: this.oscillator.frequency,
       amplitude: this.gain.gain
-    }
+    };
   }
 
   componentWillUnmount() {
@@ -35,12 +35,13 @@ class Oscillator extends Component {
 
     connectTo && this.gain.connect(connectTo);
 
-    const newChildren = React.Children.map(children, (child) => (
-      cloneElement(child, {
+    const newChildren = React.Children.map(
+      children,
+      child => cloneElement(child, {
         connectTo: this.modulations,
         ...child.props
       })
-    ));
+    );
 
     return <div>{newChildren}</div>;
   }
@@ -48,27 +49,22 @@ class Oscillator extends Component {
 
 Oscillator.contextTypes = {
   audioContext: React.PropTypes.instanceOf(AudioContextBackend)
-}
+};
 
 Oscillator.propTypes = {
   frequency: React.PropTypes.number,
   amplitude: React.PropTypes.number,
-  waveform: React.PropTypes.oneOf([
-    'sine',
-    'square',
-    'sawtooth',
-    'triangle'
-  ]),
+  waveform: React.PropTypes.oneOf(['sine', 'square', 'sawtooth', 'triangle']),
   connectTo: React.PropTypes.oneOfType([
     React.PropTypes.instanceOf(AudioParam),
     React.PropTypes.instanceOf(AudioNode)
   ])
-}
+};
 
 Oscillator.defaultProps = {
   frequency: 440,
   amplitude: 1,
   waveform: 'sine'
-}
+};
 
 export default Oscillator;

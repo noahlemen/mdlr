@@ -15,12 +15,13 @@ class Modulation extends Component {
 
     connectTo && parameter && this.gain.connect(connectTo[parameter]);
 
-    const newChildren = React.Children.map(children, (child) => (
-      cloneElement(child, {
+    const newChildren = React.Children.map(
+      children,
+      child => cloneElement(child, {
         connectTo: this.gain,
         ...child.props
       })
-    ));
+    );
 
     return <div>{newChildren}</div>;
   }
@@ -28,11 +29,11 @@ class Modulation extends Component {
 
 Modulation.contextTypes = {
   audioContext: React.PropTypes.instanceOf(AudioContextBackend)
-}
+};
 
 Modulation.propTypes = {
   connectTo: React.PropTypes.object,
   parameter: React.PropTypes.string
-}
+};
 
 export default Modulation;

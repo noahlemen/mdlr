@@ -18,6 +18,6 @@ class AudioContext extends Component {
 
 AudioContext.childContextTypes = {
   audioContext: React.PropTypes.instanceOf(AudioContextBackend)
-}
+};
 
 export default AudioContext;
