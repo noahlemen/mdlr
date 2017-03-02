@@ -36,7 +36,7 @@ yarn add mdlr
 
 ## usage
 
-to create a component that renders a sawtooth carrier oscillation at a frequency specified by its `freq` prop with a 30 Hz sine oscillation modulating its frequency and a second 2 Hz sine oscillation modulating its amplitude:
+To create a component that renders a sawtooth carrier oscillation at a frequency specified by its `freq` prop with a 30 Hz sine oscillation modulating its frequency and a second 2 Hz sine oscillation modulating its amplitude:
 ```jsx
 import React from 'react';
 import { AudioContext, Output, Oscillator, Modulation } from 'mdlr';
