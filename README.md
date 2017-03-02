@@ -34,7 +34,7 @@ yarn add mdlr
 
 ## usage
 
-to create a component that renders a sawtooth carrier oscillation at `freq` Hz with a 30 Hz sine oscillation modulating its frequency and a second 2 Hz sine oscillation modulating its amplitude:
+to create a component that renders a sawtooth carrier oscillation at a frequency specified by its `freq` prop with a 30 Hz sine oscillation modulating its frequency and a second 2 Hz sine oscillation modulating its amplitude:
 ```jsx
 import React from 'react';
 import { AudioContext, Output, Oscillator, Modulation } from 'mdlr';
@@ -44,7 +44,7 @@ class ToneGenerator extends React.Component {
     return (
       <AudioContext>
         <Output>
-          <Oscillator frequency={freq} waveform="sawtooth">
+          <Oscillator frequency={this.props.freq} waveform="sawtooth">
             <Modulation parameter="frequency">
               <Oscillator frequency={30} />
             </Modulation>
