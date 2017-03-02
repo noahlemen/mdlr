@@ -1,6 +1,6 @@
 {
   "name": "mdlr",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "a react component library for building declarative synthesizer instruments and systems",
   "main": "lib/index.js",
   "module": "es/index.js",
