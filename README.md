@@ -1,8 +1,10 @@
-# mdlr [![Build Status][build-badge]][build] [![npm package][npm-badge]][npm]
+# mdlr [![GitHub issues][issues-badge]][issues] [![Build Status][build-badge]][build] [![npm package][npm-badge]][npm]
+
 ```
 ⚠️ mdlr is just a lil bb library right now ⚠️
 ⚠️ ~please contribute if it interests you~ ⚠️
 ```
+
 ### table of contents
 
 - [intent](#intent)
@@ -103,3 +105,6 @@ class ToneGenerator extends React.Component {
 
 [npm-badge]: https://img.shields.io/npm/v/mdlr.svg?style=flat
 [npm]: https://www.npmjs.org/package/mdlr
+
+[issues-badge]: https://img.shields.io/github/issues/kedromelon/mdlr.svg
+[issues]: https://github.com/kedromelon/mdlr/issues
