@@ -71,7 +71,7 @@ class ToneGenerator extends React.Component {
 
 ### prerequisites
 
-[Node.js](http://nodejs.org/) >= v4.3.0 and [Yarn](https://yarnpkg.com) must be installed.
+[Yarn](https://yarnpkg.com) must be installed.
 
 ### installation
 
