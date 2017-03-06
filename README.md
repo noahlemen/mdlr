@@ -1,4 +1,6 @@
-# mdlr [![GitHub issues][issues-badge]][issues] [![Build Status][build-badge]][build] [![Test Coverage][coverage-badge]][coverage] [![npm package][npm-badge]][npm]
+# `mdlr`
+
+[![GitHub issues][issues-badge]][issues] [![Build Status][build-badge]][build] [![Test Coverage][coverage-badge]][coverage] [![npm package][npm-badge]][npm]
 
 ```
 ⚠️ mdlr is just a lil bb library right now ⚠️
