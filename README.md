@@ -19,7 +19,7 @@
 
 While it draws inspiration from [`react-music`](https://github.com/formidablelabs/react-music), its goals differ. If [`react-music`](https://github.com/formidablelabs/react-music) could be considered most equivalent to a synthesizer workstation, `mdlr` would be best compared to [Max](https://cycling74.com/products/max/) (perhaps its [BEAP](https://cycling74.com/2013/06/19/beap-analog-model-curriculum-outline/) library in particular), or [modular synthesizers](https://en.wikipedia.org/wiki/Modular_synthesizer). Nonetheless, `mdlr` draws inspiration from other javascript libraries and web audio API abstractions such as [`react-music`](https://github.com/formidablelabs/react-music) and [`i_dropped_my_phone_the_screen_cracked`](https://github.com/billorcutt/i_dropped_my_phone_the_screen_cracked)
 
-`mdlr` is not concerned with implementing methods of control like sequencers, MIDI input, or basic musical time structures. In fact, `mdlr` doesn't even implement musical pitch (since this is easily derived by other utilities like [`note-to-frequency`](https://www.npmjs.com/package/note-to-frequency)) in favor of frequency. Decisions about control, timing, temperament, etc. are better made in the context of `mdlr`'s use.
+`mdlr` is not concerned with implementing methods of control like sequencers, MIDI input, or basic musical time structures. In fact, `mdlr` doesn't even implement musical pitch (since this is easily derived by other utilities like [`note-to-frequency`](https://www.npmjs.com/package/note-to-frequency)) in favor of frequency. Decisions about control, timing, temperament, etc. are better made in the context of `mdlr`'s use. The focus of `mdlr` is the generation, processing, and modulation of synthesized audio.
 
 ## installation
 
