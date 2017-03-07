@@ -102,14 +102,14 @@ class ToneGenerator extends React.Component {
 
 - `yarn clean` will delete built resources.
 
-[build-badge]: https://img.shields.io/circleci/project/github/kedromelon/mdlr/master.svg?style=flat
+[build-badge]: https://img.shields.io/circleci/project/github/kedromelon/mdlr/master.svg?style=flat-square
 [build]: https://circleci.com/gh/kedromelon/mdlr
 
-[coverage-badge]: https://img.shields.io/codecov/c/github/kedromelon/mdlr.svg?style=flat
+[coverage-badge]: https://img.shields.io/codecov/c/github/kedromelon/mdlr.svg?style=flat-square
 [coverage]: https://codecov.io/gh/kedromelon/mdlr
 
-[npm-badge]: https://img.shields.io/npm/v/mdlr.svg?style=flat
+[npm-badge]: https://img.shields.io/npm/v/mdlr.svg?style=flat-square
 [npm]: https://www.npmjs.org/package/mdlr
 
-[issues-badge]: https://img.shields.io/github/issues/kedromelon/mdlr.svg?style=flat
+[issues-badge]: https://img.shields.io/github/issues/kedromelon/mdlr.svg?style=flat-square
 [issues]: https://github.com/kedromelon/mdlr/issues
