@@ -87,6 +87,7 @@ class ToneGenerator extends React.Component {
 
 - `yarn lint` will run linter on scripts.
 - `yarn pretty` will prettify scripts.
+  - 🎉 *this will also run automatically on commit!* 🎉
 
 ### running tests
 

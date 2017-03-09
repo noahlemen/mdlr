@@ -18,7 +18,14 @@
     "test": "nwb test-react",
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server",
-    "pretty": "prettier --write --single-quote *.js src/**/*.js demo/**/*.js tests/**/*.js"
+    "pretty": "prettier --write --single-quote *.js src/**/*.js demo/**/*.js tests/**/*.js",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write --single-quote",
+      "git add"
+    ]
   },
   "dependencies": {},
   "peerDependencies": {
@@ -37,7 +44,9 @@
     "eslint-plugin-import": "2.0.1",
     "eslint-plugin-jsx-a11y": "2.2.3",
     "eslint-plugin-react": "6.4.1",
+    "husky": "^0.13.2",
     "karma-chai-plugins": "^0.8.0",
+    "lint-staged": "^3.3.1",
     "mocha": "^3.2.0",
     "note-to-frequency": "^1.4.1",
     "nwb": "0.15.x",
