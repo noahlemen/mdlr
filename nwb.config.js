@@ -2,7 +2,7 @@ module.exports = {
   type: 'react-component',
   npm: {
     esModules: true,
-    umd: false,
+    umd: false
   },
   webpack: {
     compat: {
@@ -13,8 +13,6 @@ module.exports = {
   karma: {
     testContext: 'tests.webpack.js',
     frameworks: ['mocha', 'chai', 'chai-as-promised'],
-    plugins: [
-      require('karma-chai-plugins')
-    ]
+    plugins: [require('karma-chai-plugins')]
   }
 };
